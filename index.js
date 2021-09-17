@@ -5,9 +5,9 @@ $(function () {
         url: "https://geo.ipify.org/api/v1",
         data: { apiKey: api_key, ipAddress: ip },
         success: function (data) {
-            $("body").append("<pre>" + JSON.stringify(data, "", 2) + "</pre>");
+            // $("body").append("<pre>" + JSON.stringify(data, "", 2) + "</pre>");
         }
     });
 });
 
-$("body").css("background-color", "yellow")
+// $("body").css("background-color", "yellow") 

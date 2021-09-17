@@ -1,0 +1,111 @@
+// ## Colors
+
+// - Very Dark Gray: 
+$vd-gray: hsl(0, 0%, 17%);
+
+// - Dark Gray: 
+$d-gray: hsl(0, 0%, 59%);
+
+
+//FONTS
+//Weights: 400, 500, 700
+
+@font-face {
+    font-family: Rubik;
+    src: url(fonts/Rubik-VariableFont_wght.ttf);
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////MOBILE LAYOUT/////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+body {
+    font-family: Rubik, sans-serif;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-image: url(images/pattern-bg.png);
+    background-repeat: no-repeat;
+    background-position-x: -500px;
+    // background-position-y: px;
+    background-size: 400%;
+    
+    width: 100%;
+    height: 300px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    h1 {
+        font-size: 24px;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    #div-input {
+        margin: 10px 0 0;
+        width: 100%;
+
+        display: flex;
+
+        
+        input {
+            height: 55px;
+            width: 100%;
+            box-sizing: border-box;
+            
+            border: none;
+            border-radius: 15px 0 0 15px;
+            outline: none;
+
+            padding: 0 0 2px 15px;
+
+            font-family: Rubik;
+            color: $vd-gray;
+        }
+
+        button {
+            border: none;
+            border-radius: 0 15px 15px 0;
+
+            width: 70px;
+            background-color: black;
+        }
+        
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////DESKTOP LAYOUT/////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@media only screen and (min-width: 750px) {
+   
+}
+
+
+
+
+
+

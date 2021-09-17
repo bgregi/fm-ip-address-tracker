@@ -12,29 +12,41 @@
             href="./images/favicon-32x32.png"
         />
 
-        <title>Frontend Mentor | IP Address Tracker</title>
+        <link rel="stylesheet" href="styles.css">
 
-        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-        <style>
-            .attribution {
-                font-size: 11px;
-                text-align: center;
-            }
-            .attribution a {
-                color: hsl(228, 45%, 44%);
-            }
-        </style>
+        <title>Frontend Mentor | IP Address Tracker</title>
     </head>
     <body>
-        <!-- IP Address Tracker
+        <header>
+            <h1>IP Address Tracker</h1>
+            <div id="div-input">
+                <input type="text" 
+                placeholder="Search for any IP address or domain">
+                <button>
+                    <img src="images/icon-arrow.svg" alt="Arrow">
+                </button>
+            </div>
+        </header>
+        <div id="results">
+            <div id="ip">
+                <h2>IP ADDRESS</h2>
+                <h3>192.212.174.101</h3>
+            </div>
+            <div id="location">
+                <h2>LOCATION</h2>
+                <h3>Brooklin, NY 10001</h3>
+            </div>
+            <div id="timezone">
+                <h2>TIMEZONE</h2>
+                <h3>UTC -05:00</h3>
+            </div>
+            <div id="isp">
+                <h2>ISP</h2>
+                <h3>SpaceX Starlink</h3>
+            </div>
+        </div>
+        <div id="map"></div>
 
-  Search for any IP address or domain
-
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-        ISP -->
 
         <div class="attribution">
             Challenge by
@@ -46,6 +58,5 @@
         </div>
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
         <script src="index.js"></script>
-        <!-- <script>$("body").css("background-color", "yellow")</script> -->
     </body>
 </html>
