@@ -12,7 +12,7 @@
             href="./images/favicon-32x32.png"
         />
 
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css" />
 
         <title>Frontend Mentor | IP Address Tracker</title>
     </head>
@@ -20,33 +20,36 @@
         <header>
             <h1>IP Address Tracker</h1>
             <div id="div-input">
-                <input type="text" 
-                placeholder="Search for any IP address or domain">
+                <input
+                    type="text"
+                    placeholder="Search for any IP address or domain"
+                />
                 <button>
-                    <img src="images/icon-arrow.svg" alt="Arrow">
+                    <img src="images/icon-arrow.svg" alt="Arrow" />
                 </button>
             </div>
         </header>
-        <div id="results">
-            <div id="ip">
-                <h2>IP ADDRESS</h2>
-                <h3>192.212.174.101</h3>
+        <main>
+            <div id="results">
+                <div>
+                    <h2>IP ADDRESS</h2>
+                    <h3 id="ip"></h3>
+                </div>
+                <div>
+                    <h2>LOCATION</h2>
+                    <h3 id="location"></h3>
+                </div>
+                <div>
+                    <h2>TIMEZONE</h2>
+                    <h3 id="timezone"></h3>
+                </div>
+                <div>
+                    <h2>ISP</h2>
+                    <h3 id="isp"></h3>
+                </div>
             </div>
-            <div id="location">
-                <h2>LOCATION</h2>
-                <h3>Brooklin, NY 10001</h3>
-            </div>
-            <div id="timezone">
-                <h2>TIMEZONE</h2>
-                <h3>UTC -05:00</h3>
-            </div>
-            <div id="isp">
-                <h2>ISP</h2>
-                <h3>SpaceX Starlink</h3>
-            </div>
-        </div>
+        </main>
         <div id="map"></div>
-
 
         <div class="attribution">
             Challenge by

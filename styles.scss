@@ -35,8 +35,7 @@ header {
     background-image: url(images/pattern-bg.png);
     background-repeat: no-repeat;
     background-position-x: -500px;
-    // background-position-y: px;
-    background-size: 400%;
+    background-size: 1800px;
     
     width: 100%;
     height: 300px;
@@ -45,7 +44,7 @@ header {
     flex-direction: column;
     align-items: center;
 
-    padding: 20px;
+    padding: 20px 20px 0;
     box-sizing: border-box;
 
     h1 {
@@ -74,7 +73,12 @@ header {
             padding: 0 0 2px 15px;
 
             font-family: Rubik;
+            font-size: 18px;
             color: $vd-gray;
+        }
+
+        input::placeholder {
+            font-size: 14px;
         }
 
         button {
@@ -86,6 +90,50 @@ header {
         }
         
     }
+}
+
+main {
+    position: absolute;
+    top: 150px;
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 20px;    
+    
+    #results {
+        border: none;
+        border-radius: 15px;
+        background-color: white;
+
+        padding: 5px 0 25px 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            text-align: center;
+            margin: 20px 0 0;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: $d-gray;
+
+        }        
+        
+        h3 {
+            text-align: center;
+            margin: 10px 0 0;
+        }
+        
+    }
+}
+
+#map {
+    background-color: grey;
+    width: 100%;
+    height: 400px;
 }
 
 .attribution {
