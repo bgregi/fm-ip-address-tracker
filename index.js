@@ -19,13 +19,18 @@ function getInfo(ipAddress, domainName) {
             $("#location").append(`${data.location.city}, ${data.location.region} ${data.location.postalCode}`)
             $("#timezone").append("UTC " + data.location.timezone)
             $("#isp").append(data.isp)
-
+            
             console.log(data)
+
+            buildMap(data)
         },
         error: function () {
             alert("Please type a correct IP address or domain name")
         }
+
+
     })
+    
 }
 
 //GETS USER INFO AT PAGE LOAD
@@ -44,18 +49,16 @@ $("button").on("click", function () {
     getInfo(ipAddress, domainName)
 })
 
-// var map = L.map("map", {
-//     center: [-26.30444, -48.84556],
-//     zoom: 13,
-// });
-
-var mymap = L.map('map').setView([51.505, -0.09], 13);
-
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiYmdyZWdpIiwiYSI6ImNrdHc5NzFqODI1ODIycGxhNHFuNXk0NXAifQ.K4-QeRXSbsP7UDmbHRwGsA'
-}).addTo(mymap);
+//BUILDS THE MAP FROM GIVEN COORDINATES
+function buildMap(data) {    
+    var mymap = L.map('map').setView([data.location.lat, data.location.lng], 13);
+    
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoiYmdyZWdpIiwiYSI6ImNrdHc5NzFqODI1ODIycGxhNHFuNXk0NXAifQ.K4-QeRXSbsP7UDmbHRwGsA'
+    }).addTo(mymap);
+}
