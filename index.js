@@ -20,15 +20,14 @@ function getInfo(ipAddress, domainName) {
             $("#timezone").append("UTC " + data.location.timezone)
             $("#isp").append(data.isp)
             
-            console.log(data)
-
+            // console.log(data)
             buildMap(data)
         },
         error: function () {
             alert("Please type a correct IP address or domain name")
         }
-
-
+        
+        
     })
     
 }
@@ -40,18 +39,24 @@ getInfo("", "")
 $("button").on("click", function () {
     let regExp = /[a-zA-Z]/g
     let input = $("input").val()
-
+    
     let domainName = ""
     let ipAddress = ""
-
+    
     regExp.test(input) ? domainName = input : ipAddress = input
-
+    
     getInfo(ipAddress, domainName)
 })
 
+
 //BUILDS THE MAP FROM GIVEN COORDINATES
-function buildMap(data) {    
-    var mymap = L.map('map').setView([data.location.lat, data.location.lng], 13);
+function buildMap(data) {
+    if (myMap != undefined) {
+        console.log("foi")
+        myMap.remove()
+    };
+
+    var myMap = L.map('map').setView([data.location.lat, data.location.lng], 13);
     
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -60,5 +65,15 @@ function buildMap(data) {
         tileSize: 512,
         zoomOffset: -1,
         accessToken: 'pk.eyJ1IjoiYmdyZWdpIiwiYSI6ImNrdHc5NzFqODI1ODIycGxhNHFuNXk0NXAifQ.K4-QeRXSbsP7UDmbHRwGsA'
-    }).addTo(mymap);
+    }).addTo(myMap);
+    
+    //CHANGES MARKER ICON
+    var myIcon = L.icon({
+        iconUrl: 'images/icon-location.svg',
+    
+        iconSize:     [46, 56], // size of the icon
+        iconAnchor:   [23, 55], // point of the icon which will correspond to marker's location
+    });
+    L.marker([data.location.lat, data.location.lng], {icon: myIcon}).addTo(myMap);
+    
 }
