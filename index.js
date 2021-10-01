@@ -20,17 +20,19 @@ function getInfo(ipAddress, domainName) {
             $("#timezone").append("UTC " + data.location.timezone)
             $("#isp").append(data.isp)
             
-            // console.log(data)
             buildMap(data)
         },
         error: function () {
             alert("Please type a correct IP address or domain name")
-        }
-        
-        
+        }    
     })
     
 }
+
+//CREATES MAP
+var myMap = L.map('map')
+console.log(myMap)
+// L.control.zoom = false
 
 //GETS USER INFO AT PAGE LOAD
 getInfo("", "")
@@ -48,15 +50,11 @@ $("button").on("click", function () {
     getInfo(ipAddress, domainName)
 })
 
-
 //BUILDS THE MAP FROM GIVEN COORDINATES
 function buildMap(data) {
-    if (myMap != undefined) {
-        console.log("foi")
-        myMap.remove()
-    };
 
-    var myMap = L.map('map').setView([data.location.lat, data.location.lng], 13);
+    myMap.setView([data.location.lat, data.location.lng], 13);
+
     
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
