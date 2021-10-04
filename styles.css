@@ -110,7 +110,7 @@ main #results h3 {
     background-repeat: no-repeat;
     background-position-x: 0px;
     background-size: 1500px;
-    height: 260px;
+    height: 250px;
   }
   header #div-input {
     width: 500px;
@@ -128,9 +128,7 @@ main #results h3 {
   }
 
   main {
-    position: absolute;
     top: 170px;
-    box-sizing: border-box;
     width: 80%;
     padding: 20px;
   }
@@ -152,12 +150,6 @@ main #results h3 {
   }
   main #results h3 {
     text-align: left;
-  }
-
-  #map {
-    width: 100%;
-    height: 500px;
-    z-index: -1;
   }
 }
 
