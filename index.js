@@ -31,14 +31,12 @@ function getInfo(ipAddress, domainName) {
 
 //CREATES MAP
 var myMap = L.map('map')
-console.log(myMap)
-// L.control.zoom = false
 
 //GETS USER INFO AT PAGE LOAD
 getInfo("", "")
 
-//GETS INFO FROM USER INPUT
-$("button").on("click", function () {
+//GET INPUT
+function getInput() {
     let regExp = /[a-zA-Z]/g
     let input = $("input").val()
     
@@ -48,6 +46,17 @@ $("button").on("click", function () {
     regExp.test(input) ? domainName = input : ipAddress = input
     
     getInfo(ipAddress, domainName)
+}
+
+//GETS INFO FROM USER INPUT
+$("button").on("click", function() {
+    getInput()
+})
+
+$("input").on("keypress", function(e) {
+    if (e.which == 13) {
+        getInput()
+    }
 })
 
 //BUILDS THE MAP FROM GIVEN COORDINATES
