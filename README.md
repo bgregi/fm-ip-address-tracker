@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/bgregi/ip-address-tracker](https://github.com/bgregi/ip-address-tracker)
-- Live Site URL: [https://bgregi.github.io/ip-address-tracker](https://bgregi.github.io/ip-address-tracker)
+- Solution URL: [https://github.com/bgregi/fm-ip-address-tracker](https://github.com/bgregi/fm-ip-address-tracker)
+- Live Site URL: [https://bgregi.github.io/fm-ip-address-tracker](https://bgregi.github.io/fm-ip-address-tracker)
 
 
 ### Built with
